@@ -26,28 +26,40 @@ public class Grava {
         InsereBanco grava = new InsereBanco();
         Connection con = new ConnectionFactory().getConnection();
         
-        for(int i = 0 ; i <=1 ; i++){
-            pessoa.setNome(JOptionPane.showInputDialog("Nome"));
-            pessoa.setRg(JOptionPane.showInputDialog("RG"));
-            grava.inserePessoa(pessoa);
-        }
+        JOptionPane.showMessageDialog(null, "Bem vindo ao programa de teste de contingencia de Banco de dados. Por Willer Lacerda.");
+        
+        pessoa.setNome("Fernando");
+        pessoa.setRg("65464");
+        grava.inserePessoa(pessoa);
+        pessoa.setNome("José");
+        pessoa.setRg("4234231");
+        grava.inserePessoa(pessoa);
+        pessoa.setNome("Maria");
+        pessoa.setRg("3452345");
+        grava.inserePessoa(pessoa);
+        pessoa.setNome("Rodrigo");
+        pessoa.setRg("32452345");
+        grava.inserePessoa(pessoa);
+        pessoa.setNome("Mariana");
+        pessoa.setRg("3453245");
+        grava.inserePessoa(pessoa);
+        
         con.close();
         JOptionPane.showMessageDialog(null, "Ih! Perdemos a conexão com o Banco, a partir deste momento salvaremos em documentos TXT.");
         System.out.println("Desconectado do Banco");
         
-        for(int i = 0 ; i <=1 ; i++){
-            pessoa.setNome(JOptionPane.showInputDialog("Nome"));
-            pessoa.setRg(JOptionPane.showInputDialog("RG"));
-            grava.gravarEmArquivoTXT(pessoa);
-        }
-        con.close();
+        pessoa.setNome("Josefa Textina");
+        pessoa.setRg("234234");
+        grava.gravarEmArquivoTXT(pessoa);
+        pessoa.setNome("Jose Textino");
+        pessoa.setRg("34535");
+        grava.gravarEmArquivoTXT(pessoa);
+
         System.out.println("Conectado");
         JOptionPane.showMessageDialog(null, "Opa, a Conexão foi restabelecida!");
         
-       
-         
-       JOptionPane.showMessageDialog(null, "Gravar dados em Contingencia no Banco?");
-       grava.leArquivoTXT();
+        JOptionPane.showMessageDialog(null, "Gravar dados em Contingencia no Banco?");
+        grava.leArquivoTXT();
         
        
         
